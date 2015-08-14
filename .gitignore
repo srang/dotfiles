@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.vimrc
+!.screenrc
+!.cmus/playlist.pl
+!.cmus/lib.pl
+!.speedswapper
+!.bashrc
