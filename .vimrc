@@ -42,7 +42,10 @@ Plugin 'tpope/vim-fugitive'
 
 " Eclim mirror through github (eclim 2.3.4)
 " Plugin 'corvec/eclim-for-vundle'
-Plugin 'dansomething/vim-eclim'
+Plugin 'srang/eclim-vim'
+
+" Multicursor
+Plugin 'terryma/vim-multiple-cursors'
 
 " Nerd tree file system explorer and syntastic
 Plugin 'scrooloose/nerdtree'
