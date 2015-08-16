@@ -11,3 +11,5 @@
 !.config
 !.config/terminator/
 !.config/terminator/config
+!.config/fish/
+!.config/fish/functions/*
