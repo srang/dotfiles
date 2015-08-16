@@ -1,0 +1,37 @@
+[global_config]
+  title_hide_sizetext = True
+  title_transmit_bg_color = "#2fe230"
+  inactive_color_offset = 0.43
+  title_transmit_fg_color = "#000000"
+  title_inactive_bg_color = "#939393"
+[keybindings]
+  go_left = <Super>h
+  go_down = <Super>j
+  go_right = <Super>l
+  go_up = <Super>k
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    use_system_font = False
+    visible_bell = True
+    background_darkness = 0.83
+    scrollback_lines = 1000
+    background_type = transparent
+    background_image = /home/srang/Wallpapers/nintendo.jpg
+    cursor_color = "#0072ff"
+    foreground_color = "#00ff00"
+    use_custom_command = True
+    icon_bell = False
+    custom_command = env TERM=xterm-256color /usr/local/bin/fish
+    font = Liberation Mono 11
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+      command = ""
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

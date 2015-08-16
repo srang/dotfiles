@@ -8,3 +8,6 @@
 !.bashrc
 !.cmus
 !.xscreensaver
+!.config
+!.config/terminator/
+!.config/terminator/config
