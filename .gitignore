@@ -21,3 +21,8 @@
 !.config/lxsession/
 !.config/lxsession/LXDE/
 !.config/lxsession/LXDE/desktop.conf
+!.config/lxpanel/
+!.config/lxpanel/LXDE/
+!.config/lxpanel/LXDE/config
+!.config/lxpanel/LXDE/panels/
+!.config/lxpanel/LXDE/panels/panel
