@@ -345,6 +345,10 @@ vnoremap <C-C> "+y
 nnoremap <C-C> "+p
 vnoremap <C-K> <esc>'<O/*<esc>'>o*/<esc>
 nnoremap <C-H> :call SyntaxAttr()<CR>
+nnoremap <C-Up> <C-a>
+vnoremap <C-Up> <C-a>
+nnoremap <C-Down> <C-x>
+vnoremap <C-Down> <C-x>
 " nnoremap <C-H> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 " \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
