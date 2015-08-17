@@ -26,3 +26,6 @@
 !.config/lxpanel/LXDE/config
 !.config/lxpanel/LXDE/panels/
 !.config/lxpanel/LXDE/panels/panel
+!.i3
+!.i3/config
+!.i3status.conf
