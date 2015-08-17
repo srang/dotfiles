@@ -14,3 +14,6 @@
 !.config/fish/
 !.config/fish/functions
 !.config/fish/functions/*
+!.vim
+!.vim/colors/
+!.vim/colors/rangler.vim
