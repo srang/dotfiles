@@ -30,8 +30,8 @@
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/06 - Sentinel Song.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/08 - End Game.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/04 - Return to the Fold.mp3
-/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/09 - Reunion.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/10 - Blue Team.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/09 - Reunion.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/11 - Jameson Locke.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/12 - Osiris Suite, Act 1.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/13 - Osiris Suite, Act 2.mp3
