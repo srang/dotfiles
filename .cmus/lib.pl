@@ -338,7 +338,6 @@
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/18 Sacrifice.mp3
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/19 Never Forget (Midnight Version.mp3
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/20 Majestic.mp3
-/home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/2-10 Blue Team.mp3
 /home/srang/Music/Various Artist/Halo_ Combat Evolved Anniversa/1-01 Random Slipspace Trajectory.mp3
 /home/srang/Music/Various Artist/Halo_ Combat Evolved Anniversa/2-01 Still_ Moving.mp3
 /home/srang/Music/Various Artist/Halo_ Combat Evolved Anniversa/1-02 Bravery_ Brotherhood.mp3
