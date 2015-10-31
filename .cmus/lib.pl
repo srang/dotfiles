@@ -338,6 +338,45 @@
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/18 Sacrifice.mp3
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/19 Never Forget (Midnight Version.mp3
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/20 Majestic.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/01 - Halo Canticles.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/01 - Advent.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/02 - Light Is Green.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/02 - Walk Softly.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/03 - Kamchatka.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/03 - Genesis.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/04 - Return to the Fold.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/04 - Dominion.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/05 - Rock and Ice.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/05 - The Trials.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/06 - Argent Moon.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/06 - Sentinel Song.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/07 - Scavengers.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/07 - Crypt.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/08 - In Absentia.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/08 - End Game.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/09 - Meridian Crossing.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/09 - Reunion.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/10 - Unearthed.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/10 - Blue Team.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/11 - Unconfirmed Reports.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/11 - Jameson Locke.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/12 - Keeper of Secrets.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/12 - Osiris Suite, Act 1.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/13 - Cavalier.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/13 - Osiris Suite, Act 2.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/14 - Crossed Paths.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/14 - Osiris Suite, Act 3.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/15 - Untethered.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/15 - Osiris Suite, Act 4.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/16 - Skeleton Crew.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/17 - Siren Song.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/18 - Enemy of My Enemy.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/19 - Honor's Song.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/20 - Warrior World.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/21 - Covenant Prayers.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/22 - Cloud Chariot.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/23 - Sentry Battle.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/24 - Worldquake.mp3
 /home/srang/Music/Various Artist/Halo_ Combat Evolved Anniversa/1-01 Random Slipspace Trajectory.mp3
 /home/srang/Music/Various Artist/Halo_ Combat Evolved Anniversa/2-01 Still_ Moving.mp3
 /home/srang/Music/Various Artist/Halo_ Combat Evolved Anniversa/1-02 Bravery_ Brotherhood.mp3
