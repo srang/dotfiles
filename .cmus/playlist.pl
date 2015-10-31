@@ -34,8 +34,8 @@
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/09 - Reunion.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/12 - Osiris Suite, Act 1.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/11 - Jameson Locke.mp3
-/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/13 - Osiris Suite, Act 2.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/14 - Osiris Suite, Act 3.mp3
+/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/13 - Osiris Suite, Act 2.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/15 - Osiris Suite, Act 4.mp3
 /home/srang/Music/THE ARK/Halo 3/13 Farthest Outpost.mp3
 /home/srang/Music/THE ARK/Halo 3/14 Behold A Pale Horse.mp3

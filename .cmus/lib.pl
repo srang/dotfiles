@@ -338,7 +338,6 @@
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/18 Sacrifice.mp3
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/19 Never Forget (Midnight Version.mp3
 /home/srang/Music/Neil Davidge & Kazuma Jinnouch/Halo 4 (Original Soundtrack)_/20 Majestic.mp3
-/home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/01 - Halo Canticles.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/01 - Advent.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/02 - Light Is Green.mp3
 /home/srang/Music/Kazuma Jinnouchi/Halo 5_ Guardians (Original Game Soundtrack)/02 - Walk Softly.mp3
