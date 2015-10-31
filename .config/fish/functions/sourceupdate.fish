@@ -2,7 +2,7 @@ function sourceupdate --description 'Update open source software'
 
   # cmus
 
-  cd /home/srang/Open/cmus
+  cd $OPEN_SOURCE_HOME/cmus
   git pull
   echo 'rebuild cmus?'
   if read_confirm
@@ -12,9 +12,8 @@ function sourceupdate --description 'Update open source software'
 
   # vim
 
-  cd /home/srang/Open/vim
-  hg pull
-  hg update
+  cd $OPEN_SOURCE_HOME/vim
+  git pull
   echo 'reconfigure vim?'
   if read_confirm
     make clean
@@ -27,6 +26,7 @@ function sourceupdate --description 'Update open source software'
                 --enable-cscope \
                 --enable-gui=auto \
                 --enable-gtk2-check \
+                --enable-gui=gtk2 \
                 --enable-gnome-check \
                 --with-x \
                 --with-python-config-dir=/usr/lib/python2.7/config
@@ -39,7 +39,7 @@ function sourceupdate --description 'Update open source software'
 
   # neovim
 
-  cd /home/srang/Open/neovim
+  cd $OPEN_SOURCE_HOME/neovim
   git pull
   echo 'rebuild neovim?'
   if read_confirm
@@ -49,17 +49,17 @@ function sourceupdate --description 'Update open source software'
 
   # fish
 
-  cd /home/srang/Open/fish-shell
+  cd $OPEN_SOURCE_HOME/fish-shell
   git pull
   echo 'rebuild fish?'
   if read_confirm
     sudo make
-    suod make install
+    sudo make install
   end
 
   # rofi
 
-  cd /home/srang/Open/rofi
+  cd $OPEN_SOURCE_HOME/rofi
   git pull
   echo 'rebuild rofi?'
   if read_confirm
@@ -67,5 +67,16 @@ function sourceupdate --description 'Update open source software'
     ./configure
     make
     sudo make install
-  cd /home/srang/Open
+  end
+
+  # i3
+  cd $OPEN_SOURCE_HOME/i3
+  git pull
+  echo 'rebuild i3'
+  if read_confirm
+    make
+    sudo make install
+  end
+
+  cd $OPEN_SOURCE_HOME
 end

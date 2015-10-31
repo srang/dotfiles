@@ -9,8 +9,8 @@ Global {
     width=100
     height=23
     transparent=1
-    tintcolor=#00043f
-    alpha=233
+    tintcolor=#424242
+    alpha=255
     autohide=0
     heightwhenhidden=2
     setdocktype=1
@@ -70,9 +70,6 @@ Plugin {
             id=/usr/share/applications/terminator.desktop
         }
         Button {
-            id=/usr/share/applications/lxtask.desktop
-        }
-        Button {
             id=/usr/share/applications/firefox.desktop
         }
     }
@@ -93,6 +90,19 @@ Plugin {
     type = space
     Config {
         Size=2
+    }
+}
+
+Plugin {
+    type = volumealsa
+}
+
+Plugin {
+    type = monitors
+    Config {
+        DisplayCPU=1
+        DisplayRAM=0
+        CPUColor=#00FF00
     }
 }
 

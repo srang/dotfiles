@@ -37,8 +37,7 @@ bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
-
-bindsym $mod+d exec rofi -show run -font "snap 12" -fg "#5050ff" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -o 85
+bindsym $mod+d exec rofi -show run -font "snap 12" -fg "#5050ff" -bg "#000000" -lines 10 -hlfg "#ffb964" -separator-style none -hlbg "#000000" -o 85
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -70,10 +69,16 @@ bindsym $mod+Shift+l move right
 # bindsym $mod+Shift+Right move right
 
 # to scroll through workspaces on current output
-bindsym $mod+n workspace next_on_output; exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
-bindsym $mod+Shift+n workspace prev_on_output; exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
-bindsym $mod+Tab workspace back_and_forth; exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
+# and show new random wallpaper
+# bindsym $mod+n workspace next_on_output; exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
+# bindsym $mod+Shift+n workspace prev_on_output; exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
+# bindsym $mod+Tab workspace back_and_forth; exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
+
+bindsym $mod+n workspace next_on_output
+bindsym $mod+Shift+n workspace prev_on_output
+bindsym $mod+Tab workspace back_and_forth
 bindsym $sup+Tab exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
+bindsym $sup+Shift+Tab exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/backlog
 
 
 # split in horizontal orientation
@@ -107,18 +112,18 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 exec --no-startup-id feh --bg-scale /home/srang/Wallpapers/kaer_morhen.png; workspace 1
-bindsym $mod+2 exec --no-startup-id feh --bg-scale /home/srang/Wallpapers/material.png; workspace 2
-bindsym $mod+3 exec --no-startup-id feh --bg-scale /home/srang/Wallpapers/low_poly_viper.png; workspace 3
-bindsym $mod+4 exec --no-startup-id feh --bg-scale /home/srang/Wallpapers/star_destroyer.jpg; workspace 4
-bindsym $mod+5 exec --no-startup-id feh --bg-scale /home/srang/Wallpapers/everest.jpg; workspace 5
-bindsym $mod+6 exec --no-startup-id feh --bg-scale /home/srang/Wallpapers/binary.jpg; workspace 6
-# bindsym $mod+1 workspace 1
-# bindsym $mod+2 workspace 2
-# bindsym $mod+3 workspace 3
-# bindsym $mod+4 workspace 4
-# bindsym $mod+5 workspace 5
-# bindsym $mod+6 workspace 6
+# bindsym $mod+1 exec --no-startup-id feh --bg-scale -z /home/srang/wallpapers/; workspace 1
+# bindsym $mod+2 exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/; workspace 2
+# bindsym $mod+3 exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/; workspace 3
+# bindsym $mod+4 exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/; workspace 4
+# bindsym $mod+5 exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/; workspace 5
+# bindsym $mod+6 exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/; workspace 6
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -140,9 +145,13 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym XF86AudioPrev exec cmus-remote -r
 bindsym XF86AudioNext exec cmus-remote -n
 bindsym XF86AudioPlay exec cmus-remote -u
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- unmute
-bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+bindsym XF86Calculator exec cmus-remote -u
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%- unmute
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle; exec amixer -D pulse sset Capture toggle
+bindsym KP_Left exec cmus-remote -r
+bindsym KP_Begin exec cmus-remote -u
+bindsym KP_Right exec cmus-remote -n
 # bindsym XF86AudioRaiseVolume exec cmus-remote -v +2%
 # bindsym XF86AudioLowerVolume exec cmus-remote -v -2%
 # bindsym XF86AudioMute exec cmus-remote -v 0%
@@ -151,8 +160,8 @@ bindsym Pause exec cmus-remote -u
 # external monitor controls
 bindsym $sup+h move workspace to output left
 bindsym $sup+l move workspace to output right
-bindsym $sup+i exec xrandr --output DP2-3 --auto --left-of eDP2
-bindsym $sup+o exec xrandr --output HDMI1 --auto --right-of eDP2
+bindsym $sup+i exec xrandr --output DP2-2 --auto --left-of eDP1
+bindsym $sup+o exec xrandr --output HDMI1 --auto --right-of eDP1
 bindsym $sup+k exec xrandr --output DP2-3 --off --output HDMI1 --off
 
 bindsym Print --release  exec scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f /home/srang/Pictures/screenshots/'

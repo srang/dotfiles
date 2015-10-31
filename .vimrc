@@ -35,7 +35,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 " Adds git commands to vim
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 
 " Adds tab number to terminal vim
 "Plugin 'mkitt/tabline.vim'
@@ -82,7 +82,6 @@ Plugin 'einars/js-beautify'
 
 " status line modifier
 Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'dag/vim-fish'
 "Plugin 'srang/cmus-remote-vim'
@@ -231,20 +230,22 @@ set wildignore+=*.so,*.swp
 "let g:EclimJavascriptValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
 
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#show_buffers = 0
-"let g:airline#extensions#tabline#show_tabs = 1
-"let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 "let g:airline#extensions#tabline#left_sep = '>'
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 "let g:airline#extensions#tabline#right_sep = '<'
 "let g:airline#extensions#tabline#right_alt_sep = '|'
-"let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_close_button = 0
 
+
+let g:NERDTreeWinSize = 50
 
 augroup lexical
   autocmd!
-  autocmd FileType latex call lexical#init()
+  autocmd FileType tex call lexical#init()
 augroup END
 
 
@@ -279,7 +280,7 @@ au FileType tex setlocal spell spelllang=en_us
 
 "Compile to pdf
 let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_MultipleCompileFormats='dvi.pdf'
+let g:Tex_MultipleCompileFormats='dvi,pdf'
 
 let g:ycm_filetype_blacklist = {
   \ 'jrxml': 1,
@@ -319,9 +320,6 @@ let java_space_errors=1
 "
 " Useful mappings
 
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>:vertical res 45<CR>
-nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical res 45<CR>
-
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
 nnoremap Y y$
@@ -330,17 +328,27 @@ nnoremap Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+set tildeop
 
 nnoremap <C-J> o<esc>k
 nnoremap <C-K> O<esc>j
-let mapleader = "-"
+" let mapleader = "-"
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>q :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+autocmd FileType java nnoremap <buffer> <leader>ji :JavaImportOrganize<CR>
+autocmd FileType java nnoremap <buffer> <leader>sc :JavaSearchContext<CR>
+" nnoremap -d :NERDTreeToggle<CR>
+" nnoremap -q :NERDTreeToggle<CR>
+" nnoremap -f :NERDTreeFind<CR>
+" nnoremap -ev :tabe $MYVIMRC<cr>
+" nnoremap -sv :source $MYVIMRC<cr>
 nnoremap H _
 vnoremap H _
 nnoremap L $
 vnoremap L $
-inoremap jk <esc>
 vnoremap <C-C> "+y
 nnoremap <C-C> "+p
 vnoremap <C-K> <esc>'<O/*<esc>'>o*/<esc>
@@ -349,9 +357,6 @@ nnoremap <C-Up> <C-a>
 vnoremap <C-Up> <C-a>
 nnoremap <C-Down> <C-x>
 vnoremap <C-Down> <C-x>
-" nnoremap <C-H> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-" \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 "------------------------------------------------------------
 " Abbrevs {{{1
 "------------------------------------------------------------
