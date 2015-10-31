@@ -3,14 +3,14 @@
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-05 Rock And Ice.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-06 Argent Moon.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-04 Return To The Fold.mp3
-/home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-07 Scavengers.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-09 Meridian Crossing.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-10 Unearthed.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-08 Absentia.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-11 Unconfirmed Reports.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-13 Cavalier.mp3
-/home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-14 Crossed Paths.mp3
+/home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-07 Scavengers.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-15 Untethered.mp3
+/home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-14 Crossed Paths.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-16 Skeleton Crew.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-12 Keeper Of Secrets.mp3
 /home/srang/Downloads/Kazuma Jinnouchi - Halo 5 Guardians 2CD (Original Game Soundtrack) [2015] [OST-128Kbps] [Soundcloud Rip-CBR] [sn3h1t87] [GloDLS]/1-17 Siren Song.mp3
