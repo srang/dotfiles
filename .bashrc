@@ -31,3 +31,6 @@ alias dbclean="cd /home/srang/workspace/SPX/genfarecloud/support && mvn flyway:c
 alias deploytourney='cp -r /home/srang/program/Website/tourney-1.5.3.7/* /var/www/html/tourney/'
 export EDITOR='/usr/local/bin/vim'
 export TZ='America/Chicago'
+export AWS_DEFAULT_REGION='us-east-1'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

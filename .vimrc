@@ -11,6 +11,9 @@
 " These options and commands enable some very useful features in Vim, that
 " no user should have to live without.
 
+" allow local vimrc
+set exrc
+set secure
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -31,60 +34,66 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Adds git commands to vim
-" Plugin 'tpope/vim-fugitive'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'junegunn/fzf.vim'
 
-" Adds tab number to terminal vim
-"Plugin 'mkitt/tabline.vim'
-
-" Eclim mirror through github (eclim 2.3.4)
+" Eclim mirror through github (eclim 2.5)
 " Plugin 'corvec/eclim-for-vundle'
 Plugin 'srang/eclim-vim'
 
-" Multicursor
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'restore_view.vim'
+
+" snippets library
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+Plugin 'majutsushi/tagbar'
 
 " Nerd tree file system explorer and syntastic
 Plugin 'scrooloose/nerdtree'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'SQLUtilities'
+
 Plugin 'Align'
 Plugin 'SyntaxAttr.vim'
-"Plugin 'godlygeek/tabular'
-Plugin 'pangloss/vim-javascript'
 
+" supposedly handles all these
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'vim-latex/vim-latex'
+"Plugin 'groenewege/vim-less'
+Plugin 'sheerun/vim-polyglot'
+" override js.vim
+Plugin 'pangloss/vim-javascript'
 " Code completion (not java)
 Plugin 'Valloric/YouCompleteMe'
+
 " Fuzzy File searching
 "Plugin 'kien/ctrlp.vim'
-Plugin 'vim-latex/vim-latex'
+
 Plugin 'reedes/vim-lexical'
 " Surround.vim
 Plugin 'tpope/vim-surround'
 
 " sparkup html code completion/creation
-Plugin 'rstacruz/sparkup'
+Plugin 'mattn/emmet-vim'
 
 " adds a bunch of color schemes to vim
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Colortest'
 
 " Less and css coloring
-Plugin 'groenewege/vim-less'
-Plugin 'chrisbra/Colorizer'
+" Plugin 'chrisbra/Colorizer'
+Plugin 'ap/vim-css-color'
 
 " javascript un-minifier 
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
+Plugin 'sjl/gundo.vim'
+
+Plugin 'kbarrette/mediummode'
 
 " status line modifier
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
-Plugin 'dag/vim-fish'
-"Plugin 'srang/cmus-remote-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -107,34 +116,14 @@ syntax on
 
 set omnifunc=syntaxcomplete#Complete
 "Enable syntax code folding
-"set foldmethod=syntax
+" this doesn't work with opening new tabs
+"augroup vimrc
+"  au BufReadPre * setlocal foldmethod=indent
+"  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+"augroup END
 
 "------------------------------------------------------------
 " Must have options {{{1
-"
-" These are highly recommended options.
-
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
-"
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
-
-" ##set hidden
-
-" Note that not everyone likes working this way (with the hidden option).
-" Alternatives include using tabs or split windows instead of re-using the same
-" window as mentioned above, and/or either of the following options:
-" set confirm
-" set autowriteall
 
 " Better command-line completion
 set wildmenu
@@ -146,11 +135,6 @@ set showcmd
 " mapping of <C-L> below)
 set hlsearch
 
-" Modelines have historically been a source of security vulnerabilities. As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-" set nomodeline
-
 " Set scrolloff which displays extra lines beyond the line the cursor is 
 " on.
 set scrolloff=3
@@ -158,11 +142,6 @@ set scrolloff=3
 "------------------------------------------------------------
 " Usability options {{{1
 "
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
-
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
@@ -202,11 +181,11 @@ set visualbell
 set mouse=""
 
 " Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
+" 'press <Enter> to continue'
 set cmdheight=1
 
 " Display line numbers on the left
-set number
+"set number
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -214,9 +193,6 @@ if has('nvim')
   set ttimeout
   set ttimeoutlen=0
 endif
-
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
 
 " Don't add new line at end of file
 set binary
@@ -230,39 +206,39 @@ set wildignore+=*.so,*.swp
 "let g:EclimJavascriptValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
-"let g:airline#extensions#tabline#left_sep = '>'
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-"let g:airline#extensions#tabline#right_sep = '<'
-"let g:airline#extensions#tabline#right_alt_sep = '|'
 let g:airline#extensions#tabline#show_close_button = 0
+let g:airline_section_a = airline#section#create(['mode',' ','branch'])
 
 
 let g:NERDTreeWinSize = 50
 
 augroup lexical
   autocmd!
+  autocmd FileType markdown,mkd,md call lexical#init()
   autocmd FileType tex call lexical#init()
 augroup END
 
+let g:UltiSnipsExpandTrigger = "<nop>"
+let g:ulti_expand_or_jump_res = 0
 
+function! ExpandSnippetOrCarriageReturn()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<CR>"
+    endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+let g:UltiSnipsEditSplit='vertical'
 
-" JsBeautifier
-map <c-f> :call JsBeautify()<cr>
-" for js
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-" for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType xml noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType xml vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-" for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+nnoremap <leader><space> :TagbarToggle<cr>
+" sBeautifier
 "------------------------------------------------------------
 "Colors
 
@@ -286,9 +262,11 @@ let g:ycm_filetype_blacklist = {
   \ 'jrxml': 1,
   \ 'md': 1,
   \ 'sql': 1,
-  \ 'vimrc': 1,
-  \ 'javascript': 1
+  \ 'vimrc': 1
   \ }
+  "\ 'javascript': 1,
+
+let g:mediummode_motion_keys = ['h', 'j', 'k', 'l', '-', '+']
 
 let g:sql_type_default = 'mysql'
 "------------------------------------------------------------
@@ -324,15 +302,32 @@ let java_space_errors=1
 " which is the default
 nnoremap Y y$
 
-"nmap <C-J> :set number! number?<CR>
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 set tildeop
+set number
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+    set norelativenumber
+  else
+    set relativenumber
+    set nonumber
+  endif
+endfunc
 
-nnoremap <C-J> o<esc>k
-nnoremap <C-K> O<esc>j
-" let mapleader = "-"
+let g:lexical#spell_key = '<leader>sp'
+let g:user_emmet_leader_key='`'
+let g:UltiSnipsJumpForwardTrigger='<leader>k'
+let g:UltiSnipsJumpBackwardTrigger='<leader>j'
+let g:UltiSnipsListSnippets='<leader>ls'
+
+nnoremap <leader>mm :MediumModeToggle<cr>
+nnoremap <leader>g :GundoToggle<cr>
+nnoremap <leader>sp :UltiSnipsEdit<cr>
+nnoremap <leader>sn :call NumberToggle()<cr>
+nnoremap <leader><S-F> gqip
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>q :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
@@ -340,23 +335,76 @@ nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 autocmd FileType java nnoremap <buffer> <leader>ji :JavaImportOrganize<CR>
 autocmd FileType java nnoremap <buffer> <leader>sc :JavaSearchContext<CR>
-" nnoremap -d :NERDTreeToggle<CR>
-" nnoremap -q :NERDTreeToggle<CR>
-" nnoremap -f :NERDTreeFind<CR>
-" nnoremap -ev :tabe $MYVIMRC<cr>
-" nnoremap -sv :source $MYVIMRC<cr>
+vnoremap <leader>c "+y
+nnoremap <leader>v "+p
+nnoremap <leader><s-v> "+P
+vnoremap <leader>v "+p
+vnoremap <leader><s-v> "+P
+nnoremap <leader>bj  :call JsBeautify()<cr>
+vnoremap <leader>bj  :call RangeJsBeautify()<cr>
+nnoremap <leader>bx  :call HtmlBeautify()<cr>
+vnoremap <leader>bx  :call RangeHtmlBeautify()<cr>
+nnoremap <leader>bc  :call CSSBeautify()<cr>
+vnoremap <leader>bc  :call RangeCSSBeautify()<cr>
+autocmd FileType vim nnoremap <leader>ip :source $MYVIMRC
+nnoremap <leader>wv <c-w>v
+nnoremap <leader>ww <c-w>w
+nnoremap <leader>ws <c-w>s
+nnoremap <leader>wz <c-w>z
+
+nnoremap <C-J> gj
+nnoremap <C-K> gk
+nnoremap <C-H> :call SyntaxAttr()<CR>
+vnoremap <S-K> <esc>'<O/*<esc>'>o*/<esc>
 nnoremap H _
 vnoremap H _
 nnoremap L $
 vnoremap L $
-vnoremap <C-C> "+y
-nnoremap <C-C> "+p
-vnoremap <C-K> <esc>'<O/*<esc>'>o*/<esc>
-nnoremap <C-H> :call SyntaxAttr()<CR>
-nnoremap <C-Up> <C-a>
-vnoremap <C-Up> <C-a>
-nnoremap <C-Down> <C-x>
-vnoremap <C-Down> <C-x>
+nnoremap <Up> Vk
+vnoremap <Up> k
+nnoremap <Down> Vj
+vnoremap <Down> j
+nnoremap <Left> %
+vnoremap <Left> %
+nnoremap <Right> *
+nnoremap <space> za
+
+
+" remap folding commands
+
+
+" Use one of the following to define the camel characters.
+" Stop on capital letters.
+let g:camelchar = "A-Z"
+" Also stop on numbers.
+"let g:camelchar = "A-Z0-9"
+" Include '.' for class member, ',' for separator, ';' end-statement,
+" and <[< bracket starts and "'` quotes.
+"let g:camelchar = "A-Z0-9.,;:{([`'\""
+nnoremap <silent><C-Left> :<C-u>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>
+nnoremap <silent><C-Right> :<C-u>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
+inoremap <silent><C-Left> <C-o>:call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>
+inoremap <silent><C-Right> <C-o>:call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
+vnoremap <silent><C-Left> :<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>v`>o
+vnoremap <silent><C-Right> <Esc>`>:<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>v`<o
+
+" "easier" inc/decrement
+"nnoremap <C-Up> <C-a>
+"vnoremap <C-Up> <C-a>
+"nnoremap <C-Down> <C-x>
+"vnoremap <C-Down> <C-x>
+
+"figure out functions so autoformat db scripts
+" :'<,'>s:\([`a-zA-Z\. ]\+\),:\1,\r  :g
+" :%s: select :\rSELECT\r  :
+" :'<,'>s:\((\|)\)::g
+" :'<,'>s: \(\(left \|\)join\):\r  \1:g
+" :'<,'>s:^  join:  INNER JOIN:
+" :'<,'>s:  left join:  LEFT JOIN:
+" :%s: where :\rWHERE :
+" :'<,'>s: from :\rFROM :
+" :'<,'>s: on`: ON :g
+" :%s:`::g
 "------------------------------------------------------------
 " Abbrevs {{{1
 "------------------------------------------------------------

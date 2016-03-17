@@ -16,7 +16,7 @@ function sourceupdate --description 'Update open source software'
   git pull
   echo 'reconfigure vim?'
   if read_confirm
-    make clean
+    make distclean
     ./configure --with-features=huge \
                 --enable-multibyte \
                 --enable-pythoninterp \

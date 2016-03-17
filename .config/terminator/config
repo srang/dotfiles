@@ -1,29 +1,59 @@
 [global_config]
   title_hide_sizetext = True
-  title_transmit_bg_color = "#2fe230"
-  inactive_color_offset = 0.43
-  title_transmit_fg_color = "#000000"
-  title_inactive_bg_color = "#939393"
+  title_transmit_fg_color = "#dedede"
+  title_inactive_fg_color = "#808080"
+  title_transmit_bg_color = "#30634b"
+  inactive_color_offset = 0.52
+  title_inactive_bg_color = "#400000"
 [keybindings]
-  go_left = <Super>h
-  go_down = <Super>j
-  go_right = <Super>l
-  go_up = <Super>k
 [profiles]
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
     visible_bell = True
-    background_darkness = 0.83
-    scrollback_lines = 1000
+    background_darkness = 0.74
+    scrollback_lines = 5000
     background_type = transparent
-    background_image = /home/srang/Wallpapers/nintendo.jpg
-    cursor_color = "#0072ff"
+    background_image = None
+    cursor_color = "#ffc800"
     foreground_color = "#00ff00"
     use_custom_command = True
     icon_bell = False
-    custom_command = env TERM=xterm-256color /usr/local/bin/fish
-    font = Liberation Mono for Powerline 9
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    cursor_shape = underline
+    font = Source Code Pro for Powerline 9
+  [[cmus]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.77
+    background_type = transparent
+    background_image = None
+    foreground_color = "#00ff00"
+    use_custom_command = True
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Fantasque Sans Mono 8
+  [[dark]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.90
+    background_type = transparent
+    background_image = None
+    cursor_color = "#064f8b"
+    foreground_color = "#008888"
+    use_custom_command = True
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Fixed 12
+  [[vim]]
+    scrollbar_position = hidden
+    use_system_font = False
+    background_darkness = 0.88
+    background_type = transparent
+    background_image = None
+    cursor_color = "#024fdb"
+    foreground_color = "#00ff00"
+    use_custom_command = True
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Terminess Powerline 9
 [layouts]
   [[default]]
     [[[child1]]]

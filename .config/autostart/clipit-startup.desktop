@@ -23,6 +23,6 @@ Icon=clipit-trayicon
 Exec=clipit
 Terminal=false
 Type=Application
-OnlyShowIn=GNOME;XFCE;Unity;MATE;LXDE;
+OnlyShowIn=GNOME;XFCE;Unity;MATE;
 X-GNOME-Autostart-enabled=true
 X-Desktop-File-Install-Version=0.22

@@ -139,5 +139,5 @@ Comment[zu]=Bonisa izaziso
 Exec=/usr/libexec/notification-daemon
 Terminal=false
 Type=Application
-OnlyShowIn=GNOME-Flashback;LXDE;
+OnlyShowIn=GNOME-Flashback;
 NoDisplay=true

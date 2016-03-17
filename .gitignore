@@ -34,3 +34,5 @@
 !.config/pcmanfm/
 !.config/pcmanfm/LXDE/
 !.config/pcmanfm/LXDE/pcmanfm.conf
+!/home/srang/.zshrc
+!/home/srang/.zshalias

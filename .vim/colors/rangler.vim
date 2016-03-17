@@ -60,6 +60,8 @@ hi htmlComment      ctermfg=241         ctermbg=None        cterm=None
 hi htmlDoctype      ctermfg=19          ctermbg=234         cterm=None
 
 " js
+"hi javascriptIdentifierName ctermfg=23 ctermbg=None cterm=None
+" php
 
 " c
 hi cStructure   ctermfg=136         ctermbg=None        cterm=None
