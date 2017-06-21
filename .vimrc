@@ -1,9 +1,12 @@
-" URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
+"              ██
+"             ░░
+"    ██    ██  ██  ██████████   ██████   █████
+"   ░██   ░██ ░██ ░░██░░██░░██ ░░██░░█  ██░░░██
+"   ░░██ ░██  ░██  ░██ ░██ ░██  ░██ ░  ░██  ░░ 
+" ██ ░░████   ░██  ░██ ░██ ░██  ░██    ░██   ██
+"░██  ░░██    ░██  ███ ░██ ░██ ░███    ░░█████
+"░░    ░░     ░░  ░░░  ░░  ░░  ░░░      ░░░░░
+
 
 "------------------------------------------------------------
 " Features {{{1
@@ -11,9 +14,6 @@
 " These options and commands enable some very useful features in Vim, that
 " no user should have to live without.
 
-" allow local vimrc
-set exrc
-set secure
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -86,9 +86,13 @@ Plugin 'ap/vim-css-color'
 " javascript un-minifier 
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
-Plugin 'sjl/gundo.vim'
 
-Plugin 'kbarrette/mediummode'
+" not compatible with neovim
+"Plugin 'sjl/gundo.vim'
+"fork
+Plugin 'simnalamburt/vim-mundo'
+
+"Plugin 'kbarrette/mediummode'
 
 " status line modifier
 Plugin 'bling/vim-airline'
@@ -182,7 +186,7 @@ set mouse=""
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " 'press <Enter> to continue'
-set cmdheight=1
+set cmdheight=2
 
 " Display line numbers on the left
 "set number
@@ -199,12 +203,18 @@ set binary
 set noeol
 set wildignore+=*.so,*.swp
 
+" Save undo history
+set undofile
+set undodir=/home/srang/.vim/history
+
 "------------------------------------------------------------
 "Plugin Options
 "These are options associated with installed plugins
 
 "let g:EclimJavascriptValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
+
+let g:surround_{char2nr('b')} = "**\r**"
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -214,12 +224,13 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline_section_a = airline#section#create(['mode',' ','branch'])
 
-
+let NERDTreeQuitOnOpen = 1
 let g:NERDTreeWinSize = 50
 
 augroup lexical
   autocmd!
   autocmd FileType markdown,mkd,md call lexical#init()
+  autocmd FileType asciidoc call lexical#init()
   autocmd FileType tex call lexical#init()
 augroup END
 
@@ -237,7 +248,17 @@ endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 let g:UltiSnipsEditSplit='vertical'
 
-nnoremap <leader><space> :TagbarToggle<cr>
+let g:ycm_filetype_blacklist = {
+  \ 'jrxml': 1,
+  \ 'md': 1,
+  \ 'sql': 1,
+  \ 'vimrc': 1
+  \ }
+  "\ 'javascript': 1,
+
+let g:mediummode_motion_keys = ['h', 'j', 'k', 'l', '-', '+']
+
+let g:sql_type_default = 'mysql'
 " sBeautifier
 "------------------------------------------------------------
 "Colors
@@ -258,17 +279,6 @@ au FileType tex setlocal spell spelllang=en_us
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
 
-let g:ycm_filetype_blacklist = {
-  \ 'jrxml': 1,
-  \ 'md': 1,
-  \ 'sql': 1,
-  \ 'vimrc': 1
-  \ }
-  "\ 'javascript': 1,
-
-let g:mediummode_motion_keys = ['h', 'j', 'k', 'l', '-', '+']
-
-let g:sql_type_default = 'mysql'
 "------------------------------------------------------------
 " Indentation options {{{1
 "
@@ -295,6 +305,8 @@ let java_space_errors=1
 
 "------------------------------------------------------------
 " Mappings {{{1
+
+let mapleader = "-"
 "
 " Useful mappings
 
@@ -318,19 +330,21 @@ function! NumberToggle()
 endfunc
 
 let g:lexical#spell_key = '<leader>sp'
-let g:user_emmet_leader_key='`'
+let g:user_emmet_leader_key='!'
 let g:UltiSnipsJumpForwardTrigger='<leader>k'
 let g:UltiSnipsJumpBackwardTrigger='<leader>j'
 let g:UltiSnipsListSnippets='<leader>ls'
 
+nnoremap <leader><space> :TagbarToggle<cr>
 nnoremap <leader>mm :MediumModeToggle<cr>
-nnoremap <leader>g :GundoToggle<cr>
-nnoremap <leader>sp :UltiSnipsEdit<cr>
+nnoremap <leader>g :MundoToggle<cr>
+nnoremap <leader>se :UltiSnipsEdit<cr>
 nnoremap <leader>sn :call NumberToggle()<cr>
-nnoremap <leader><S-F> gqip
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>q :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>q gqip
+nnoremap <leader>d :let NERDTreeQuitOnOpen = 1 <bar> NERDTreeToggle<CR>
+nnoremap <leader><S-D> :let NERDTreeQuitOnOpen = 0 <bar> NERDTreeToggle<CR>
+nnoremap <leader>f :let NERDTreeQuitOnOpen = 1 <bar> NERDTreeFind<CR>
+nnoremap <leader><S-F> :let NERDTreeQuitOnOpen = 0 <bar> NERDTreeFind<CR>
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 autocmd FileType java nnoremap <buffer> <leader>ji :JavaImportOrganize<CR>
@@ -351,6 +365,7 @@ nnoremap <leader>wv <c-w>v
 nnoremap <leader>ww <c-w>w
 nnoremap <leader>ws <c-w>s
 nnoremap <leader>wz <c-w>z
+nnoremap <leader>h :%!xxd
 
 nnoremap <C-J> gj
 nnoremap <C-K> gk
@@ -388,6 +403,9 @@ inoremap <silent><C-Right> <C-o>:call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelcha
 vnoremap <silent><C-Left> :<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>v`>o
 vnoremap <silent><C-Right> <Esc>`>:<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>v`<o
 
+" allow local vimrc
+set exrc
+set secure
 " "easier" inc/decrement
 "nnoremap <C-Up> <C-a>
 "vnoremap <C-Up> <C-a>

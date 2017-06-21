@@ -63,6 +63,9 @@ hi htmlDoctype      ctermfg=19          ctermbg=234         cterm=None
 "hi javascriptIdentifierName ctermfg=23 ctermbg=None cterm=None
 " php
 
+" java
+hi javaAnnotation ctermfg=40       ctermbg=None        cterm=Bold
+
 " c
 hi cStructure   ctermfg=136         ctermbg=None        cterm=None
 hi cIncluded    ctermfg=23          ctermbg=234         cterm=None

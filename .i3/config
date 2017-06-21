@@ -9,12 +9,12 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod3
 set $sup Mod4
 
 #gaps
-gaps inner 16
-for_window [class="^.*"] border pixel 3
+#gaps inner 0
+#for_window [class="^.*"] border pixel 2
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -77,7 +77,8 @@ bindsym $mod+Shift+l move right
 
 bindsym $mod+n workspace next_on_output
 bindsym $mod+Shift+n workspace prev_on_output
-bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Tab exec rofi -show window
+# bindsym $mod+Tab workspace back_and_forth
 bindsym $sup+Tab exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/
 bindsym $sup+Shift+Tab exec --no-startup-id feh --bg-scale -z /home/srang/Wallpapers/backlog
 
@@ -117,7 +118,7 @@ bindsym $mod+a focus parent
 bindsym $mod+1 workspace "1:console"
 bindsym $mod+2 workspace "2:test"
 bindsym $mod+3 workspace "3:web"
-bindsym $mod+4 workspace "4:studio"
+bindsym $mod+4 workspace "4:temp"
 bindsym $mod+5 workspace "5:misc"
 bindsym $mod+6 workspace "6:side"
 bindsym $mod+7 workspace "7:jour"
@@ -129,7 +130,7 @@ bindsym $mod+9 workspace "11:con"
 bindsym $mod+Shift+1 move container to workspace "1:console"
 bindsym $mod+Shift+2 move container to workspace "2:test"
 bindsym $mod+Shift+3 move container to workspace "3:web"
-bindsym $mod+Shift+4 move container to workspace "4:studio"
+bindsym $mod+Shift+4 move container to workspace "4:temp"
 bindsym $mod+Shift+5 move container to workspace "5:misc"
 bindsym $mod+Shift+6 move container to workspace "6:side"
 bindsym $mod+Shift+7 move container to workspace "7:jour"
@@ -170,7 +171,7 @@ bindsym $sup+0 exec cmus-remote -v 0%
 # external monitor controls
 bindsym $sup+h move workspace to output left
 bindsym $sup+l move workspace to output right
-bindsym $sup+u exec xrandr --output DP2-2 --auto --right-of eDP1
+bindsym $sup+u exec xrandr --output HDMI1 --auto --left-of eDP1
 bindsym $sup+i exec xrandr --output HDMI1 --auto --right-of eDP1
 bindsym $sup+k exec xrandr --output DP2-2 --off --output HDMI1 --off
 

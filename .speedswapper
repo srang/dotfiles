@@ -1,5 +1,11 @@
 ! Swap caps lock and escape
-! remove Lock = Caps_Lock
-! keysym Caps_Lock = Escape
-! add Lock = Caps_Lock
+remove Lock = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+
+! make right shift = escape (duh)
 keysym Shift_R = Escape
+
+! make Alt_R a Mod3 (different from Alt_L)
+remove Mod1 = Alt_L
+add Mod3 = Alt_L

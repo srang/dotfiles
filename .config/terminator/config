@@ -1,67 +1,87 @@
 [global_config]
+  inactive_color_offset = 0.52
   title_hide_sizetext = True
-  title_transmit_fg_color = "#dedede"
+  title_inactive_bg_color = "#400000"
   title_inactive_fg_color = "#808080"
   title_transmit_bg_color = "#30634b"
-  inactive_color_offset = 0.52
-  title_inactive_bg_color = "#400000"
+  title_transmit_fg_color = "#dedede"
 [keybindings]
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    use_system_font = False
-    visible_bell = True
-    background_darkness = 0.74
-    scrollback_lines = 5000
-    background_type = transparent
-    background_image = None
-    cursor_color = "#ffc800"
-    foreground_color = "#00ff00"
-    use_custom_command = True
-    icon_bell = False
-    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
-    cursor_shape = underline
-    font = Source Code Pro for Powerline 9
-  [[cmus]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.77
-    background_type = transparent
-    background_image = None
-    foreground_color = "#00ff00"
-    use_custom_command = True
-    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
-    font = Fantasque Sans Mono 8
-  [[dark]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.90
-    background_type = transparent
-    background_image = None
-    cursor_color = "#064f8b"
-    foreground_color = "#008888"
-    use_custom_command = True
-    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
-    font = Fixed 12
-  [[vim]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.88
-    background_type = transparent
-    background_image = None
-    cursor_color = "#024fdb"
-    foreground_color = "#00ff00"
-    use_custom_command = True
-    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
-    font = Terminess Powerline 9
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
+      command = ""
       parent = window0
       profile = default
-      command = ""
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.74
+    background_image = None
+    background_type = transparent
+    cursor_color = "#ffc800"
+    cursor_shape = underline
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Source Code Pro for Powerline 9
+    foreground_color = "#00ff00"
+    icon_bell = False
+    scrollback_lines = 5000
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False
+    visible_bell = True
+  [[cmus]]
+    background_darkness = 0.77
+    background_image = None
+    background_type = transparent
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Fantasque Sans Mono 8
+    foreground_color = "#00ff00"
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False
+  [[dark]]
+    background_darkness = 0.9
+    background_image = None
+    background_type = transparent
+    cursor_color = "#064f8b"
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Fixed 12
+    foreground_color = "#008888"
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False
+  [[vim]]
+    background_darkness = 0.88
+    background_image = None
+    background_type = transparent
+    cursor_color = "#024fdb"
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Terminess Powerline 9
+    foreground_color = "#00ff00"
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False
+  [[vim-big]]
+    background_darkness = 0.88
+    background_image = None
+    background_type = transparent
+    cursor_color = "#024fdb"
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Terminess Powerline 13
+    foreground_color = "#00ff00"
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False
+  [[vim-md]]
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#2cff4b"
+    custom_command = env TERM=xterm-256color /bin/ssh-agent /usr/local/bin/zsh
+    font = Terminess Powerline 11
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False

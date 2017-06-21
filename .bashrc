@@ -32,5 +32,8 @@ alias deploytourney='cp -r /home/srang/program/Website/tourney-1.5.3.7/* /var/ww
 export EDITOR='/usr/local/bin/vim'
 export TZ='America/Chicago'
 export AWS_DEFAULT_REGION='us-east-1'
+export GOPATH="$HOME/.go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOPATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
