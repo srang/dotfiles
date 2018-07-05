@@ -1,0 +1,99 @@
+#!/bin/bash
+cd $OPEN_SOURCE_HOME/cmus
+git pull
+echo 'rebuild cmus?'
+if $(read_confirm); then
+  make clean
+  ./configure
+  make
+  sudo make install
+fi
+
+# vim
+
+cd $OPEN_SOURCE_HOME/vim
+git checkout -- runtime/doc/tags
+git pull
+echo 'reconfigure vim?'
+if $(read_confirm); then
+  sudo make distclean
+  # removed perl and ruby support
+  ./configure --with-features=huge \
+              --enable-multibyte \
+              --enable-pythoninterp \
+              --enable-fail-if-missing \
+              --enable-luainterp \
+              --enable-cscope \
+              --enable-gui=auto \
+              --enable-gtk2-check \
+              --enable-gui=gtk2 \
+              --enable-gnome-check \
+              --with-x \
+              --with-python-config-dir=/usr/lib/python2.7/config
+fi
+echo 'rebuild vim?'
+if $(read_confirm); then
+  sudo make
+  sudo make install
+  vim +BundleInstall! + BundleClean +qall
+  python /home/srang/.vim/bundle/YouCompleteMe/install.py --clang-completer --gocode-completer --tern-completer
+fi
+
+# neovim
+
+cd $OPEN_SOURCE_HOME/neovim
+git pull
+echo 'rebuild neovim?'
+if $(read_confirm); then
+  sudo make clean
+  sudo make
+  sudo make install
+fi
+
+# zsh
+
+cd $OPEN_SOURCE_HOME/zsh
+git pull
+echo 'rebuild zsh?'
+if $(read_confirm); then
+  sudo make clean
+  sudo make
+  sudo make install
+fi
+
+# rofi
+
+cd $OPEN_SOURCE_HOME/rofi
+git pull
+git submodule foreach git pull origin master
+echo 'rebuild rofi?'
+if $(read_confirm); then
+  make clean
+  autoreconf -i
+  ./configure
+  make
+  sudo make install
+fi
+
+# i3
+cd $OPEN_SOURCE_HOME/i3
+git pull
+echo 'rebuild i3?'
+if $(read_confirm); then
+  make
+  sudo make install
+fi
+
+cd $OPEN_SOURCE_HOME/conky
+git pull
+echo 'rebuild conky?'
+if $(read_confirm); then
+  rm -rf build/
+  mkdir build
+  cd build/
+  cmake ../
+  make
+  sudo make install
+fi
+
+cd $OPEN_SOURCE_HOME
