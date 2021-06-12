@@ -11,6 +11,8 @@ fi
 
 export PS1="[\T] - \W> "
 
+export ANSIBLE_NOCOWS=1
+export BASH_SILENCE_DEPRECATION_WARNING=1
 export OPENSOURCE_HOME=/home/srang/code/opensource
 export MYVIMRC=/home/srang/.vimrc
 export MYTMUXRC=/home/srang/.tmux.conf
@@ -28,18 +30,24 @@ export NVM_DIR="$HOME/.nvm"
 
 ### RVM
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source /home/srang/.rvm/scripts/rvm
-export PATH=$PATH:$GOPATH/bin
+# export PATH="$PATH:$HOME/.rvm/bin"
+# source /home/srang/.rvm/scripts/rvm
 
+### JAVA
+# source /opt/rh/rh-maven35/enable
+
+### GO
+#export PATH=$PATH:$GOPATH/bin
+
+### Local scripts
+export PATH="$PATH:$HOME/.bin"
 
 ### Minishift/kube
-export MINIKUBE_IN_STYLE=false
-#source ~/.minishift_usage
-#export MINISHIFT_ENABLE_EXPERIMENTAL=y
-#export MINISHIFT_FLAGS='--extra-clusterup-flags="--enable=*,service-catalog,template-service-broker,automation-service-broker"'
+# export MINIKUBE_IN_STYLE=false
+# source ~/.minishift_usage
+# export MINISHIFT_ENABLE_EXPERIMENTAL=y
+# export MINISHIFT_FLAGS='--extra-clusterup-flags="--enable=*,service-catalog,template-service-broker,automation-service-broker"'
 
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 export EDITOR=$(which vim)
-source /opt/rh/rh-maven35/enable
-cowthought.sh
+thoughts | cowsay
