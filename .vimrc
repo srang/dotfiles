@@ -100,6 +100,14 @@ set wildignore+=*.so,*.swp
 set undofile
 set undodir=/home/srang/.vim/history
 
+" Set TILDE as an operator
+set tildeop
+
+"------------------------------------------------------------
+"Highlights/filetypes
+
+autocmd BufNewFile,BufRead Dockerfile.* set syntax=dockerfile
+
 "------------------------------------------------------------
 "Colors
 
@@ -107,7 +115,7 @@ colorscheme rangler
 
 
 "------------------------------------------------------------
-" Indentation options {{{1
+" Visual Formatting options {{{1
 "
 " Indentation settings according to personal preference.
 
@@ -120,25 +128,7 @@ if has('nvim')
   set noincsearch
 endif
 
-" Indentation settings for using hard tabs for indent. Display tabs as
-" two characters wide.
-" set shiftwidth=2
-" set tabstop=2
 
-"------------------------------------------------------------
-" Listchars useful for finding unwanted whitespace
-set list listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:·
-" let java_space_errors=1
-
-"------------------------------------------------------------
-" Mappings {{{1
-
-let mapleader = "-"
-
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
-set tildeop
 set number
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -150,39 +140,16 @@ function! NumberToggle()
   endif
 endfunc
 
-" This contains my 'essential' keybindings
-source ~/.essential_vimrc
 
-" VIMRC macros
-nnoremap <leader>ev :tabe $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+" Indentation settings for using hard tabs for indent. Display tabs as
+" two characters wide.
+" set shiftwidth=2
+" set tabstop=2
 
-" ??
-" autocmd FileType vim nnoremap <leader>ip :source $MYVIMRC
-
-" TMUX macros
-nnoremap <leader>et :tabe $MYTMUXRC<cr>
-
-" BASH macros
-nnoremap <leader>eb :tabe $MYBASHRC<cr>
-
-" Quick window nav
-nnoremap <leader>wv <c-w>v
-nnoremap <leader>ww <c-w>w
-nnoremap <leader>ws <c-w>s
-nnoremap <leader>wz <c-w>z
-
-" Scrolling
-nnoremap <C-J> <C-E>
-nnoremap <C-K> <C-Y>
-
-" copy paste (doesn't work)
-" vnoremap <leader>c "+y
-" nnoremap <leader>v "+p
-" nnoremap <leader><s-v> "+P
-" vnoremap <leader>v "+p
-" vnoremap <leader><s-v> "+P
-
+"------------------------------------------------------------
+" Listchars useful for finding unwanted whitespace
+set list listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:·
+" let java_space_errors=1
 
 "------------------------------------------------------------
 " Plugin Options {{{1
@@ -202,11 +169,6 @@ let NERDTreeQuitOnOpen = 1
 " Set default width
 let g:NERDTreeWinSize = 45
 
-" NERDTree toggles
-nnoremap <leader>d :let NERDTreeQuitOnOpen = 1 <bar> NERDTreeToggle<CR>
-nnoremap <leader><S-D> :let NERDTreeQuitOnOpen = 0 <bar> NERDTreeToggle<CR>
-nnoremap <leader>f :let NERDTreeQuitOnOpen = 1 <bar> NERDTreeFind<CR>
-nnoremap <leader><S-F> :let NERDTreeQuitOnOpen = 0 <bar> NERDTreeFind<CR>
 
 " ------- Lexical
 augroup lexical
@@ -243,9 +205,84 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+
+" ------- Airline
+" Automatically displays all buffers when there's only one tab open
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#tab_nr_type= 2
+
 " ------- Latex (old)
 "let g:tex_flavor='latex'
 "
 ""Compile to pdf
 " let g:Tex_DefaultTargetFormat='pdf'
 " let g:Tex_MultipleCompileFormats='dvi,pdf'
+"------------------------------------------------------------
+" Mappings {{{1
+
+let mapleader = "-"
+
+" This contains my 'essential' keybindings
+source ~/.essential_vimrc
+
+" VIMRC macros
+nnoremap <leader>ev :tabe $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" ??
+" autocmd FileType vim nnoremap <leader>ip :source $MYVIMRC
+
+" TMUX macros
+nnoremap <leader>et :tabe $MYTMUXRC<cr>
+
+" BASH macros
+nnoremap <leader>eb :tabe $MYBASHRC<cr>
+
+" Quick window nav
+" Window vertical split
+nnoremap <leader>wv <c-w>v
+" Window horizontal split
+nnoremap <leader>ws <c-w>s
+" Change window
+nnoremap <leader>ww <c-w>w
+nnoremap <leader>wz <c-w>z
+" Toggle rotation
+nnoremap <leader>wh <c-w>t<c-w>H
+nnoremap <leader>wk <c-w>t<c-w>K
+" Swap splits
+nnoremap <leader>wr <c-w>r
+nnoremap gw <c-w>w
+
+" Scrolling
+nnoremap <C-J> <C-E>
+nnoremap <C-K> <C-Y>
+
+" copy paste (doesn't work)
+" vnoremap <leader>c "+y
+" nnoremap <leader>v "+p
+" nnoremap <leader><s-v> "+P
+" vnoremap <leader>v "+p
+" vnoremap <leader><s-v> "+P
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+" Swap between absolute and relative line numbers
+nnoremap <leader>sn :call NumberToggle()<cr>
+
+" NERDTree toggles
+nnoremap <leader>d :let NERDTreeQuitOnOpen = 1 <bar> NERDTreeToggle<CR>
+nnoremap <leader><S-D> :let NERDTreeQuitOnOpen = 0 <bar> NERDTreeToggle<CR>
+" nnoremap <leader>f :let NERDTreeQuitOnOpen = 1 <bar> NERDTreeFind<CR>
+" nnoremap <leader><S-F> :let NERDTreeQuitOnOpen = 0 <bar> NERDTreeFind<CR>
+
+" Turn vim into hexeditor
+nnoremap <leader>hh :%!xxd
+
+" Format text paragraph
+nnoremap <leader>q gqip
+
+" Format imported text file, adds a line below paragraph, then splits out
+" lines and goes to next paragraph
+nnoremap <leader>ff o<esc>kgqip}j

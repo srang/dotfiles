@@ -1,39 +1,45 @@
-# .bashrc
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-
-# Avoid duplicates
-export HISTCONTROL=ignoredups:erasedups
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
-
-# After each command, append to the history file and reread it
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
+#!/bin/bash
+#    _           _
+#   | |_ ___ ___| |_ ___ ___
+#  _| . | .'|_ -|   |  _|  _|
+# |_|___|__,|___|_|_|_| |___|
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
+export PS1="[\T] - \W> "
+
+export OPENSOURCE_HOME=/home/srang/code/opensource
+export MYVIMRC=/home/srang/.vimrc
+export MYTMUXRC=/home/srang/.tmux.conf
+export MYBASHRC=/home/srang/.bashrc
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias next='cmus-remote -n'
-alias pause='cmus-remote -u'
-alias vim='/usr/local/bin/vim'
-alias genfare='cd /home/srang/workspace/SPX/genfarecloud'
-alias tourney='cd /home/srang/program/Website/tourney-1.5.3.7/'
-alias gitclean='git fetch -p && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
-alias dbclean="cd /home/srang/workspace/SPX/genfarecloud/support && mvn flyway:clean -Dflyway.schemas='cdta,test' && mvn flyway:baseline -Dflyway.schemas='cdta' && mvn flyway:baseline -Dflyway.schemas='test' && mvn clean install && mvn mongo-migrate:clean && mvn mongo-migrate:migrate ; cd .."
-#alias dbclean="cd /home/srang/workspace/SPX/genfarecloud/support && mvn flyway:clean -Dflyway.schemas='cdta,test' && mvn clean install && mvn mongo-migrate:clean && mvn mongo-migrate:migrate ; cd .."
-alias deploytourney='cp -r /home/srang/program/Website/tourney-1.5.3.7/* /var/www/html/tourney/'
-export EDITOR='/usr/local/bin/vim'
-export TZ='America/Chicago'
-export AWS_DEFAULT_REGION='us-east-1'
-export GOPATH="$HOME/.go"
-export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOPATH"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+## NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+### RVM
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+source /home/srang/.rvm/scripts/rvm
+export PATH=$PATH:$GOPATH/bin
+
+
+### Minishift/kube
+export MINIKUBE_IN_STYLE=false
+#source ~/.minishift_usage
+#export MINISHIFT_ENABLE_EXPERIMENTAL=y
+#export MINISHIFT_FLAGS='--extra-clusterup-flags="--enable=*,service-catalog,template-service-broker,automation-service-broker"'
+
+eval "$(direnv hook bash)"
+export EDITOR=$(which vim)
+source /opt/rh/rh-maven35/enable
+cowthought.sh
