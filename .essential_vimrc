@@ -1,0 +1,9 @@
+set number
+nnoremap <C-J> gj
+nnoremap <C-K> gk
+nnoremap Y y$
+nnoremap H _
+vnoremap H _
+nnoremap L $
+vnoremap L $
+
