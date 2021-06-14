@@ -16,40 +16,20 @@
     - name: git-vim-opt-plugins
       ansible.builtin.git:
         repo: "https://github.com/{{ item }}.git"
-        dest: "{{ vim_plugins.directory }}/opt/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
+        dest: "{{ vim_plugins_directory }}/opt/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
       with_items: "{{ vim_plugins.opt }}"
     - name: git-vim-start-plugins
       ansible.builtin.git:
         repo: "https://github.com/{{ item }}.git"
-        dest: "{{ vim_plugins.directory }}/start/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
+        dest: "{{ vim_plugins_directory }}/start/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
       with_items: "{{ vim_plugins.start }}"
-#    - name: link-vimrc
-#      ansible.builtin.file:
-#        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
-#        dest: /Users/srang/.vimrc
-#        state: link
-#    - name: link-global-git-ignore
-#      ansible.builtin.file:
-#        src: /Users/srang/code/opensource/srang/dotfiles/.global_ignore
-#        dest: /Users/srang/.global_ignore
-#        state: link
-#    - name: link-local-bin
-#      ansible.builtin.file:
-#        src: /Users/srang/code/opensource/srang/dotfiles/bin
-#        dest: /Users/srang/.bin
-#        state: link
-#    - name: link-bashrc
-#      ansible.builtin.file:
-#        src: /Users/srang/code/opensource/srang/dotfiles/.bashrc
-#        dest: /Users/srang/.bashrc
-#        state: link
-#    - name: link-essential-vimrc
-#      ansible.builtin.file:
-#        src: /Users/srang/code/opensource/srang/dotfiles/.essential_vimrc
-#        dest: /Users/srang/.essential_vimrc
-#        state: link
-#    - name: link-vimrc
-#      ansible.builtin.file:
-#        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
-#        dest: /Users/srang/.vimrc
-#        state: link
+    - name: link-vimrc
+      ansible.builtin.debug:
+        msg: "src: {{ item.src }} dest: {{ item.dest }}"
+      with_items: "{{ dotfiles }}"
+    - name: link-vimrc
+      ansible.builtin.file:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        state: link
+      with_items: "{{ dotfiles }}"

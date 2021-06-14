@@ -1,6 +1,6 @@
 ---
 home_directory: "/Users/srang"
-dotfiles_directory: "/Users/srang/code/opensource/srang/dotfiles"
+dotfiles_directory: "{{ home_directory }}/code/opensource/srang/dotfiles"
 
 brew_packages:
   - git
@@ -8,9 +8,8 @@ brew_packages:
   - cowsay
   - figlet
   - vim
-
+vim_plugins_directory: "{{ home_directory }}/.vim/pack/vendor"
 vim_plugins:
-  directory: "{{ home_directory }}/.vim/pack/vendor"
   start:
     - "vim-airline/vim-airline"
     - "ap/vim-css-color"
@@ -24,3 +23,12 @@ vim_plugins:
   opt:
     - "mattn/emmet-vim"
     - "lervag/vimtex"
+
+dotfiles:
+  - { src: "{{ dotfiles_directory}}/.vimrc", dest: "{{ home_directory }}/.vimrc" }
+  - { src: "{{ dotfiles_directory}}/.essential_vimrc", dest: "{{ home_directory }}/.essential_vimrc" }
+  - { src: "{{ dotfiles_directory}}/.bashrc", dest: "{{ home_directory }}/.bashrc" }
+  - { src: "{{ dotfiles_directory}}/.profile", dest: "{{ home_directory }}/.profile" }
+  - { src: "{{ dotfiles_directory}}/.global_ignore", dest: "{{ home_directory }}/.global_ignore" }
+  - { src: "{{ dotfiles_directory}}/bin", dest: "{{ home_directory }}/.bin" }
+  - { src: "{{ dotfiles_directory}}/.vim/colors/rangler.vim", dest: "{{ home_directory }}/.vim/colors/rangler.vim" }
