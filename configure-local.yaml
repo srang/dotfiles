@@ -3,22 +3,27 @@
   hosts: localhost
   tasks:
     - name: brew-git
-      community.general.homebrew: 
+      community.general.homebrew:
         name: git
         state: latest
         update_homebrew: yes
     - name: brew-vim
-      community.general.homebrew: 
+      community.general.homebrew:
         name: vim
         state: latest
         update_homebrew: no
     - name: brew-ansible
-      community.general.homebrew: 
+      community.general.homebrew:
         name: ansible
         state: latest
         update_homebrew: no
+    - name: brew-figlet
+      community.general.homebrew:
+        name: figlet
+        state: latest
+        update_homebrew: no
     - name: brew-cowsay
-      community.general.homebrew: 
+      community.general.homebrew:
         name: cowsay
         state: latest
         update_homebrew: no
@@ -75,4 +80,24 @@
       ansible.builtin.file:
         src: /Users/srang/code/opensource/srang/dotfiles/.global_ignore
         dest: /Users/srang/.global_ignore
+        state: link
+    - name: link-local-bin
+      ansible.builtin.file:
+        src: /Users/srang/code/opensource/srang/dotfiles/bin
+        dest: /Users/srang/.bin
+        state: link
+    - name: link-bashrc
+      ansible.builtin.file:
+        src: /Users/srang/code/opensource/srang/dotfiles/.bashrc
+        dest: /Users/srang/.bashrc
+        state: link
+    - name: link-essential-vimrc
+      ansible.builtin.file:
+        src: /Users/srang/code/opensource/srang/dotfiles/.essential_vimrc
+        dest: /Users/srang/.essential_vimrc
+        state: link
+    - name: link-vimrc
+      ansible.builtin.file:
+        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
+        dest: /Users/srang/.vimrc
         state: link
