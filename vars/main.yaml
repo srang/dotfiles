@@ -1,0 +1,26 @@
+---
+home_directory: "/Users/srang"
+dotfiles_directory: "/Users/srang/code/opensource/srang/dotfiles"
+
+brew_packages:
+  - git
+  - ansible
+  - cowsay
+  - figlet
+  - vim
+
+vim_plugins:
+  directory: "{{ home_directory }}/.vim/pack/vendor"
+  start:
+    - "vim-airline/vim-airline"
+    - "ap/vim-css-color"
+    - "reedes/vim-lexical"
+    - "preservim/nerdcommenter"
+    - "preservim/nerdtree"
+    - "tpope/vim-surround"
+    - "scrooloose/syntastic"
+    - "elixir-editors/vim-elixir"
+    - "tpope/vim-liquid"
+  opt:
+    - "mattn/emmet-vim"
+    - "lervag/vimtex"

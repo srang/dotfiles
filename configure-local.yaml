@@ -1,103 +1,55 @@
 ---
 - name: configure local
   hosts: localhost
+  vars_files:
+    - vars/main.yaml
   tasks:
-    - name: brew-git
+    - name: brew-update
       community.general.homebrew:
-        name: git
-        state: latest
         update_homebrew: yes
-    - name: brew-vim
+    - name: brew-packages
       community.general.homebrew:
-        name: vim
+        name: "{{ item }}"
         state: latest
         update_homebrew: no
-    - name: brew-ansible
-      community.general.homebrew:
-        name: ansible
-        state: latest
-        update_homebrew: no
-    - name: brew-figlet
-      community.general.homebrew:
-        name: figlet
-        state: latest
-        update_homebrew: no
-    - name: brew-cowsay
-      community.general.homebrew:
-        name: cowsay
-        state: latest
-        update_homebrew: no
-    - name: git-vim-plug-emmet
+      with_items: "{{ brew_packages }}"
+    - name: git-vim-opt-plugins
       ansible.builtin.git:
-        repo: 'https://github.com/mattn/emmet-vim.git'
-        dest: /Users/srang/.vim/pack/vendor/opt/emmet
-    - name: git-vim-plug-vimtex
+        repo: "https://github.com/{{ item }}.git"
+        dest: "{{ vim_plugins.directory }}/opt/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
+      with_items: "{{ vim_plugins.opt }}"
+    - name: git-vim-start-plugins
       ansible.builtin.git:
-        repo: 'https://github.com/lervag/vimtex.git'
-        dest: /Users/srang/.vim/pack/vendor/opt/vimtex
-    - name: git-vim-plug-airline
-      ansible.builtin.git:
-        repo: 'https://github.com/vim-airline/vim-airline.git'
-        dest: /Users/srang/.vim/pack/vendor/start/airline
-    - name: git-vim-plug-css
-      ansible.builtin.git:
-        repo: 'https://github.com/ap/vim-css-color.git'
-        dest: /Users/srang/.vim/pack/vendor/start/css-color
-    - name: git-vim-plug-lexical
-      ansible.builtin.git:
-        repo: 'https://github.com/reedes/vim-lexical.git'
-        dest: /Users/srang/.vim/pack/vendor/start/lexical
-    - name: git-vim-plug-nerdcommenter
-      ansible.builtin.git:
-        repo: 'https://github.com/preservim/nerdcommenter.git'
-        dest: /Users/srang/.vim/pack/vendor/start/nerdcommenter
-    - name: git-vim-plug-nerdtree
-      ansible.builtin.git:
-        repo: 'https://github.com/preservim/nerdtree.git'
-        dest: /Users/srang/.vim/pack/vendor/start/nerdtree
-    - name: git-vim-plug-surround
-      ansible.builtin.git:
-        repo: 'https://github.com/tpope/vim-surround.git'
-        dest: /Users/srang/.vim/pack/vendor/start/surround
-    - name: git-vim-plug-syntastic
-      ansible.builtin.git:
-        repo: 'https://github.com/scrooloose/syntastic.git'
-        dest: /Users/srang/.vim/pack/vendor/start/syntastic
-    - name: git-vim-plug-elixir
-      ansible.builtin.git:
-        repo: 'https://github.com/elixir-editors/vim-elixir.git'
-        dest: /Users/srang/.vim/pack/vendor/start/vim-elixir
-    - name: git-vim-plug-liquid
-      ansible.builtin.git:
-        repo: 'https://github.com/tpope/vim-liquid.git'
-        dest: /Users/srang/.vim/pack/vendor/start/vim-liquid
-    - name: link-vimrc
-      ansible.builtin.file:
-        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
-        dest: /Users/srang/.vimrc
-        state: link
-    - name: link-global-git-ignore
-      ansible.builtin.file:
-        src: /Users/srang/code/opensource/srang/dotfiles/.global_ignore
-        dest: /Users/srang/.global_ignore
-        state: link
-    - name: link-local-bin
-      ansible.builtin.file:
-        src: /Users/srang/code/opensource/srang/dotfiles/bin
-        dest: /Users/srang/.bin
-        state: link
-    - name: link-bashrc
-      ansible.builtin.file:
-        src: /Users/srang/code/opensource/srang/dotfiles/.bashrc
-        dest: /Users/srang/.bashrc
-        state: link
-    - name: link-essential-vimrc
-      ansible.builtin.file:
-        src: /Users/srang/code/opensource/srang/dotfiles/.essential_vimrc
-        dest: /Users/srang/.essential_vimrc
-        state: link
-    - name: link-vimrc
-      ansible.builtin.file:
-        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
-        dest: /Users/srang/.vimrc
-        state: link
+        repo: "https://github.com/{{ item }}.git"
+        dest: "{{ vim_plugins.directory }}/start/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
+      with_items: "{{ vim_plugins.start }}"
+#    - name: link-vimrc
+#      ansible.builtin.file:
+#        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
+#        dest: /Users/srang/.vimrc
+#        state: link
+#    - name: link-global-git-ignore
+#      ansible.builtin.file:
+#        src: /Users/srang/code/opensource/srang/dotfiles/.global_ignore
+#        dest: /Users/srang/.global_ignore
+#        state: link
+#    - name: link-local-bin
+#      ansible.builtin.file:
+#        src: /Users/srang/code/opensource/srang/dotfiles/bin
+#        dest: /Users/srang/.bin
+#        state: link
+#    - name: link-bashrc
+#      ansible.builtin.file:
+#        src: /Users/srang/code/opensource/srang/dotfiles/.bashrc
+#        dest: /Users/srang/.bashrc
+#        state: link
+#    - name: link-essential-vimrc
+#      ansible.builtin.file:
+#        src: /Users/srang/code/opensource/srang/dotfiles/.essential_vimrc
+#        dest: /Users/srang/.essential_vimrc
+#        state: link
+#    - name: link-vimrc
+#      ansible.builtin.file:
+#        src: /Users/srang/code/opensource/srang/dotfiles/.vimrc
+#        dest: /Users/srang/.vimrc
+#        state: link
