@@ -1,0 +1,7 @@
+[core]
+  excludesfile = /Users/srang/.global_ignore
+[user]
+  email = srang2010@gmail.com
+  name = Sam Rang
+[push]
+  default = current

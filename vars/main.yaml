@@ -35,6 +35,7 @@ dotfiles:
   - { src: "{{ dotfiles_directory}}/.essential_vimrc", dest: "{{ home_directory }}/.essential_vimrc" }
   - { src: "{{ dotfiles_directory}}/.bashrc", dest: "{{ home_directory }}/.bashrc" }
   - { src: "{{ dotfiles_directory}}/.profile", dest: "{{ home_directory }}/.profile" }
+  - { src: "{{ dotfiles_directory}}/.gitconfig", dest: "{{ home_directory }}/.gitconfig" }
   - { src: "{{ dotfiles_directory}}/.global_ignore", dest: "{{ home_directory }}/.global_ignore" }
   - { src: "{{ dotfiles_directory}}/bin", dest: "{{ home_directory }}/.bin" }
   - { src: "{{ dotfiles_directory}}/.vim/colors/rangler.vim", dest: "{{ home_directory }}/.vim/colors/rangler.vim" }
