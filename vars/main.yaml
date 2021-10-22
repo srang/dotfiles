@@ -12,7 +12,8 @@ brew_packages:
   - tmux
   - vim
   - maven
-  - java8
+  - javacc
+  - java
 vim_plugins_directory: "{{ home_directory }}/.vim/pack/vendor"
 vim_plugins:
   start:
