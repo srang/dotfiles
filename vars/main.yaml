@@ -7,7 +7,13 @@ brew_packages:
   - ansible
   - cowsay
   - figlet
+  - elixir
+  - node
+  - tmux
   - vim
+  - maven
+  - javacc
+  - java
 vim_plugins_directory: "{{ home_directory }}/.vim/pack/vendor"
 vim_plugins:
   start:

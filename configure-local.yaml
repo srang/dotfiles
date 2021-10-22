@@ -13,6 +13,8 @@
         state: latest
         update_homebrew: no
       with_items: "{{ brew_packages }}"
+# TODO install hex `mix local.hex`
+# TODO link java sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
     - name: git-vim-opt-plugins
       ansible.builtin.git:
         repo: "https://github.com/{{ item }}.git"

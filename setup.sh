@@ -69,13 +69,16 @@ show_help() {
 }
 
 
+# TODO implement this
 # check OS
 
 ### MAC
 
 # check if homebrew installed
 #which brew || 
-# confirm default shell
+# change default shell
 # brew install ansible
 # install rvm
+# terminal change option as meta key
+# screenshot change default location
 ansible-playbook configure-local.yaml

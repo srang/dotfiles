@@ -13,10 +13,10 @@ export PS1="[\T] - \W> "
 
 export ANSIBLE_NOCOWS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export OPENSOURCE_HOME=/home/srang/code/opensource
-export MYVIMRC=/home/srang/.vimrc
-export MYTMUXRC=/home/srang/.tmux.conf
-export MYBASHRC=/home/srang/.bashrc
+export OPENSOURCE_HOME=$HOME/code/opensource
+export MYVIMRC=$HOME/.vimrc
+export MYTMUXRC=$HOME/.tmux.conf
+export MYBASHRC=$HOME/.bashrc
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
