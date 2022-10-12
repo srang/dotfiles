@@ -36,3 +36,4 @@
         dest: "{{ item.dest }}"
         state: link
       with_items: "{{ dotfiles }}"
+# TODO change default shell
