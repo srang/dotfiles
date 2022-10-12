@@ -78,18 +78,15 @@ case "${unameOut}" in
 esac
 
 
-# install rvm
 # terminal change option as meta key
 # screenshot change default location
 ### MAC
 if [ $machine = "Mac" ]; then
   echo "I'm a Mac"
   # check homebrew installed
-  which brew || echo "Brew not installed"
-  # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # check ansible is installed
-  # brew install ansible
+  which ansible || brew install ansible
   ansible-playbook configure-local.yaml
-  # change default shell
 fi
 
