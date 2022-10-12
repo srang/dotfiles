@@ -68,17 +68,28 @@ show_help() {
     echo "$EMSG"
 }
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
 
-# TODO implement this
-# check OS
 
-### MAC
-
-# check if homebrew installed
-#which brew || 
-# change default shell
-# brew install ansible
 # install rvm
 # terminal change option as meta key
 # screenshot change default location
-ansible-playbook configure-local.yaml
+### MAC
+if [ $machine = "Mac" ]; then
+  echo "I'm a Mac"
+  # check homebrew installed
+  which brew || echo "Brew not installed"
+  # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # check ansible is installed
+  # brew install ansible
+  ansible-playbook configure-local.yaml
+  # change default shell
+fi
+
