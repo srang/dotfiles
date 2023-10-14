@@ -1,6 +1,6 @@
 ---
 home_directory: "/Users/srang"
-dotfiles_directory: "{{ home_directory }}/code/opensource/srang/dotfiles"
+dotfiles_directory: "{{ home_directory }}/code/github/srang/dotfiles"
 
 brew_packages:
   - git
