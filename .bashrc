@@ -13,7 +13,7 @@ export PS1="[\T] - \W> "
 
 export ANSIBLE_NOCOWS=1
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export OPENSOURCE_HOME=$HOME/code/opensource
+export OPENSOURCE_HOME=$HOME/code/github
 export MYVIMRC=$HOME/.vimrc
 export MYTMUXRC=$HOME/.tmux.conf
 export MYBASHRC=$HOME/.bashrc
@@ -24,14 +24,14 @@ export MYBASHRC=$HOME/.bashrc
 # User specific aliases and functions
 
 ## NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-### RVM
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source "$HOME/.rvm/scripts/rvm"
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+#### RVM
+## Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"
+#source "$HOME/.rvm/scripts/rvm"
 
 ### JAVA
 # source /opt/rh/rh-maven35/enable
@@ -42,6 +42,9 @@ source "$HOME/.rvm/scripts/rvm"
 ### Local scripts
 export PATH="$PATH:$HOME/.bin"
 
+### Brew
+export PATH="$PATH:/opt/homebrew/bin"
+
 ### Minishift/kube
 # export MINIKUBE_IN_STYLE=false
 # source ~/.minishift_usage
@@ -50,4 +53,5 @@ export PATH="$PATH:$HOME/.bin"
 
 # eval "$(direnv hook bash)"
 export EDITOR=$(which vim)
-thoughts | cowsay
+# TODO Fix cowsay
+#thoughts | cowsay
