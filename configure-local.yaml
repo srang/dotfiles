@@ -4,15 +4,15 @@
   vars_files:
     - vars/main.yaml
   tasks:
-#    - name: brew-update
-#      community.general.homebrew:
-#        update_homebrew: yes
-#    - name: brew-packages
-#      community.general.homebrew:
-#        name: "{{ item }}"
-#        state: latest
-#        update_homebrew: no
-#      with_items: "{{ brew_packages }}"
+    - name: brew-update
+      community.general.homebrew:
+        update_homebrew: yes
+    - name: brew-packages
+      community.general.homebrew:
+        name: "{{ item }}"
+        state: latest
+        update_homebrew: no
+      with_items: "{{ brew_packages }}"
 ## TODO homebrew install/reinstall mactex cask
 ## TODO install hex `mix local.hex`
 ## TODO link java sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
