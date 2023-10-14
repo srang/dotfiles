@@ -5,3 +5,5 @@
   name = Sam Rang
 [push]
   default = current
+[pull]
+  rebase = true
