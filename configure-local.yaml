@@ -26,7 +26,12 @@
         repo: "https://github.com/{{ item }}.git"
         dest: "{{ vim_plugins_directory }}/start/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
       with_items: "{{ vim_plugins.start }}"
-    - name: link-vimrc
+    - name: configure-directories
+      ansible.builtin.file:
+        path: "{{ item.dir }}"
+        state: directory
+      with_items: "{{ config_dirs }}"
+    - name: link-dotfiles
       ansible.builtin.file:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"

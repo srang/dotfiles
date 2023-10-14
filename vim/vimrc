@@ -161,7 +161,7 @@ au FileType tex,markdown,mkd,md,asciidoc,text setlocal spell spelllang=en_us
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
 " Show hidden files
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
 " Don't leave Nerdtree as last window
 let NERDTreeQuitOnOpen = 1
