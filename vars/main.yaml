@@ -14,28 +14,51 @@ brew_packages:
   - maven
   - javacc
   - java
-vim_plugins_directory: "{{ home_directory }}/.vim/pack/vendor"
-vim_plugins:
-  start:
-    - "vim-airline/vim-airline"
-    - "ap/vim-css-color"
-    - "reedes/vim-lexical"
-    - "preservim/nerdcommenter"
-    - "preservim/nerdtree"
-    - "tpope/vim-surround"
-    - "scrooloose/syntastic"
-    - "elixir-editors/vim-elixir"
-    - "tpope/vim-liquid"
-  opt:
-    - "mattn/emmet-vim"
-    - "lervag/vimtex"
+  - podman
+vim:
+  plugins:
+    directory: "{{ home_directory }}/.vim/pack/vendor"
+    ## TODO consider version locking?
+    start:
+      - "vim-airline/vim-airline"
+      - "ap/vim-css-color"
+      - "reedes/vim-lexical"
+      - "preservim/nerdcommenter"
+      - "preservim/nerdtree"
+      - "tpope/vim-surround"
+      - "scrooloose/syntastic"
+      - "elixir-editors/vim-elixir"
+      - "tpope/vim-liquid"
+    opt:
+      - "mattn/emmet-vim"
+      - "lervag/vimtex"
+  dotfiles:
+    - { src: "{{ dotfiles_directory }}/vim/vimrc", dest: "{{ home_directory }}/.vimrc" }
+    - { src: "{{ dotfiles_directory }}/vim/essential_vimrc", dest: "{{ home_directory }}/.essential_vimrc" }
+    - { src: "{{ dotfiles_directory }}/vim/colors/rangler.vim", dest: "{{ home_directory }}/.vim/colors/rangler.vim" }
+  config_dirs:
+    - { dir: "{{ home_directory }}/.vim" }
+    - { dir: "{{ home_directory }}/.vim/colors" }
 
-dotfiles:
-  - { src: "{{ dotfiles_directory}}/.vimrc", dest: "{{ home_directory }}/.vimrc" }
-  - { src: "{{ dotfiles_directory}}/.essential_vimrc", dest: "{{ home_directory }}/.essential_vimrc" }
-  - { src: "{{ dotfiles_directory}}/.bashrc", dest: "{{ home_directory }}/.bashrc" }
-  - { src: "{{ dotfiles_directory}}/.profile", dest: "{{ home_directory }}/.profile" }
-  - { src: "{{ dotfiles_directory}}/.gitconfig", dest: "{{ home_directory }}/.gitconfig" }
-  - { src: "{{ dotfiles_directory}}/.global_ignore", dest: "{{ home_directory }}/.global_ignore" }
-  - { src: "{{ dotfiles_directory}}/bin", dest: "{{ home_directory }}/.bin" }
-  - { src: "{{ dotfiles_directory}}/.vim/colors/rangler.vim", dest: "{{ home_directory }}/.vim/colors/rangler.vim" }
+bash:
+  dotfiles:
+    - { src: "{{ dotfiles_directory }}/bash/bashrc", dest: "{{ home_directory }}/.bashrc" }
+    - { src: "{{ dotfiles_directory }}/bash/bash_profile", dest: "{{ home_directory }}/.profile" }
+  scripts:
+    - { src: "{{ dotfiles_directory }}/scripts/thoughts", dest: "{{ home_directory }}/.bin/thoughts" }
+    - { src: "{{ dotfiles_directory }}/scripts/jokes", dest: "{{ home_directory }}/.bin/jokes" }
+  config_dirs:
+    - { dir: "{{ home_directory }}/.bin" }
+
+git:
+  dotfiles:
+    - { src: "{{ dotfiles_directory }}/git/global_gitconfig", dest: "{{ home_directory }}/.gitconfig" }
+    - { src: "{{ dotfiles_directory }}/git/global_gitignore", dest: "{{ home_directory }}/.global_ignore" }
+  config_dirs:
+
+
+maven:
+  dotfiles:
+    - { src: "{{ dotfiles_directory }}/m2-settings.xml", dest: "{{ home_directory }}/.m2/settings.xml" }
+  config_dirs:
+    - { dir: "{{ home_directory }}/.m2" }

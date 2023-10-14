@@ -45,7 +45,7 @@ trap on_exit EXIT
 [ "$QUIET" ]   ||  QUIET=
 [ "$DEBUG" ]   ||  DEBUG=
 [ "$DATEFORM" ]||  DATEFORM="%F %T(%Z)"
-[ "$OUTPUT" ]  ||  OUTPUT="/tmp/config-setup.log" # useful for catching errors
+[ "$OUTPUT" ]  ||  OUTPUT="/tmp/com.github.srang.dofiles.config-setup.log" # useful for catching errors
 
 # Logging helpers
 out() { echo "$(date +"$DATEFORM"): $*" | tee $OUTPUT; }
@@ -84,6 +84,7 @@ esac
 if [ $machine = "Mac" ]; then
   echo "I'm a Mac"
   # check homebrew installed
+  # TODO fix bug where brew install doesn't auto add to $PATH
   which brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # check ansible is installed
   which ansible || brew install ansible

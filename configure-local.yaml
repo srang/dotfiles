@@ -13,23 +13,55 @@
         state: latest
         update_homebrew: no
       with_items: "{{ brew_packages }}"
-# TODO homebrew install/reinstall mactex cask
-# TODO install hex `mix local.hex`
-# TODO link java sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+## TODO homebrew install/reinstall mactex cask
+## TODO install hex `mix local.hex`
+## TODO link java sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+    - name: configure-vim-directories
+      ansible.builtin.file:
+        path: "{{ item.dir }}"
+        state: directory
+      with_items: "{{ vim.config_dirs }}"
     - name: git-vim-opt-plugins
       ansible.builtin.git:
         repo: "https://github.com/{{ item }}.git"
-        dest: "{{ vim_plugins_directory }}/opt/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
-      with_items: "{{ vim_plugins.opt }}"
+        dest: "{{ vim.plugins.directory }}/opt/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
+      with_items: "{{ vim.plugins.opt }}"
     - name: git-vim-start-plugins
       ansible.builtin.git:
         repo: "https://github.com/{{ item }}.git"
-        dest: "{{ vim_plugins_directory }}/start/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
-      with_items: "{{ vim_plugins.start }}"
-    - name: link-vimrc
-      ansible.builtin.file:
+        dest: "{{ vim.plugins.directory }}/start/{{ item | regex_replace('[a-z-]+/([a-z-]+)', '\\1') }}"
+      with_items: "{{ vim.plugins.start }}"
+    - name: copy-vim-dotfiles
+      ansible.builtin.copy:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"
-        state: link
-      with_items: "{{ dotfiles }}"
-# TODO change default shell
+      with_items: "{{ vim.dotfiles }}"
+
+    - name: configure-bash-directories
+      ansible.builtin.file:
+        path: "{{ item.dir }}"
+        state: directory
+      with_items: "{{ bash.config_dirs }}"
+    - name: copy-bash-dotfiles
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items: "{{ bash.dotfiles }}"
+    - name: copy-bash-scripts
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: u+rwx
+      with_items: "{{ bash.scripts }}"
+
+    - name: configure-mvn-directories
+      ansible.builtin.file:
+        path: "{{ item.dir }}"
+        state: directory
+      with_items: "{{ maven.config_dirs }}"
+    - name: copy-mvn-config
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items: "{{ maven.dotfiles }}"
+## TODO change default shell
