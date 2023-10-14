@@ -53,5 +53,4 @@ export PATH="$PATH:/opt/homebrew/bin"
 
 # eval "$(direnv hook bash)"
 export EDITOR=$(which vim)
-# TODO Fix cowsay
-#thoughts | cowsay
+thoughts | cowsay
